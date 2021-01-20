@@ -1,7 +1,6 @@
 dict_ = { 10:"A",11:"B",12:"C",13:"D",14:"E",15:"F"}
 g =""
 
-# 10    12     A  1010
 def convert_to_octal(a):
     p = str(a//8)
     q = str(a%8)
@@ -19,8 +18,8 @@ def convert_to_octal(a):
             return(p+q)
 
 def convert_to_hex(a):
-    r = str(a%16)
-    s = str(a//16)
+    r = str(a%16)   
+    s = str(a//16)  
     if a<16:
         if a<10:
             return(a)
@@ -30,7 +29,7 @@ def convert_to_hex(a):
         if int(r) == 0:
             return(s+'0') 
         elif int(r) >= 10 :
-            return(s+dict_[r])
+            return(s+dict_[int(r)])
         else :
             return(s+r)
 
@@ -50,15 +49,21 @@ def convert_to_binary(a,g):
     
     return(g)
 
-k = int(input())
 
-z = convert_to_binary(k,g)
-l = int(len(z))
+def print_formatted(n) :
+    z = convert_to_binary(n,g)
+    l = (int(len(z)))
 
-for j in range(k):
-    i = j+1
-    x = convert_to_octal(i) 
-    y = convert_to_hex(i)
-    z = convert_to_binary(i,g)
-    
-    print('%s %ls %ls %ls' % (i,x,y,z))
+    for j in range(n):
+        i = j+1
+        x = convert_to_octal(i)
+        y = convert_to_hex(i)
+        z = convert_to_binary(i,g)
+        
+        print(str(i).rjust(l),str(x).rjust(l),str(y).rjust(l),str(z).rjust(l))
+
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
+
