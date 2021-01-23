@@ -1,0 +1,6 @@
+print("Varun".center(20,"-"))
+print("---Varun----Varun".ljust(20,"-"))
+print("Varun".ljust(10,"-"))
+print("Varun".ljust(10,"-"))
+print("Varun".center(10,"-"))
+print("Varun".rjust(10,"-"))
