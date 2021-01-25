@@ -1,6 +1,7 @@
 def split_and_join(line):
-    split_and_join = line.split(' ')
-    k = "-".join(split_and_join)
+    split_ = line.split(' ')
+    print(split_)
+    k = "-".join(split_)
     return k
     
 if __name__ == '__main__':
