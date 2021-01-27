@@ -8,7 +8,6 @@ for i in range(n):
 print(list_)
 
 
-list__ = []
-list__.append(input().split())
-list_.remove("h") 
+list__ = ["h","n","k","h"]
+list__.remove("h") 
 print(list__)
