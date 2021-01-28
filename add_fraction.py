@@ -12,18 +12,23 @@ def calculate_lcm(m,n):
     
 
 def factor_multipication(a,b,c,d,lcm_):
+    # finding the factor for numerator multiplication
     p = (lcm_)//c
     q = (lcm_)//d 
 
+    # Changing the numerator
     a = a*p
     b = b*q
 
+    # New nemerator and denominator 
     sum_of_num = a+b
     sum_of_den = lcm_
 
+    # Removing the old values of index [0]
     numarators.remove(a/p)
     denominators.remove(c)
 
+    # Replacing the old values of index [0]
     numarators[0] = sum_of_num
     denominators[0] = sum_of_den
 
@@ -37,6 +42,7 @@ def simplify_fraction(p,q):
     return hcf
 
 
+# Input as a list
 numarators = [int(x) for x in input().split()]
 denominators = [int(x) for x in input().split()]
 
@@ -46,6 +52,9 @@ for _ in range(y-1):
     lcm = calculate_lcm(denominators[0],denominators[1])
     factor_multipication(numarators[0],numarators[1],denominators[0],denominators[1],lcm)
 
+# Simplify fraction here
 i = simplify_fraction(numarators[0],denominators[0])
+
+# Prnt final answer
 print(f"{numarators[0]//i}/{denominators[0]//i}")
 

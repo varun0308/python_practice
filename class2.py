@@ -1,15 +1,15 @@
 class vehicle:
 
     def __init__(self,wheel,vehicle_,size):
-        self.wheel = wheel
-        self.vehicle_ = vehicle_
-        self.size = size
+        self.w = wheel
+        self.v= vehicle_
+        self.s = size
 
     def wheels(self):
-        print("No. of wheels =",self.wheel) 
+        print("No. of wheels =",self.w) 
 
     def sizes(self):
-        print("Size of the",self.vehicle_ ,"is",self.size)
+        print("Size of the",self.v ,"is",self.s)
 
 a=input()
 b=input()
