@@ -15,11 +15,7 @@ print(a.ndim,b.ndim,c.ndim)
 
 
 
-arr = np.array([1, 2, 3, 4, 5, 6, 7])
-bool_result = (arr % 2 == 0)
-newarr = arr[bool_result]
-print(bool_result)
-print(newarr)
+
 
 from numpy import random
 
