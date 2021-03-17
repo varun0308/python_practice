@@ -10,6 +10,8 @@ print(np.arange(2.2,9.33))
 
 print(np.arange(2.2,9.3,0.9))
 
+# Can add 2 array element like this
+
 arr = np.arange(10)
 print(arr)
 print(arr[2]+arr[4])

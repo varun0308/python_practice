@@ -59,7 +59,7 @@ while winner == 0:
                     chance += 1  
                     winner = victory(matrix, player)   # Passing through the defined function            
                     if winner :
-                        sys.exit("Player 1 wins")      # Comes out of the if loop. Player still remains 1
+                        sys.exit("Player 1 wins !!!")      # Comes out of the if loop. Player still remains 1
                     player = 2
             
 
@@ -71,7 +71,7 @@ while winner == 0:
                     list[i]='O'
                     winner = victory(matrix, player) 
                     if winner :
-                        sys.exit("Player 1 wins")
+                        sys.exit("Player 2 wins !!!")
                     player = 1
         
 
