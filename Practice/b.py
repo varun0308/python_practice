@@ -1,28 +1,12 @@
-# #!/bin/python3
+import numpy as np
 
-# import math
-# import os
-# import random
-# import re
-# import sys
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+arr = np.array(matrix)
 
-# def solve(s):
-#     list1 = [x for x in s.split()]
-#     for i in range(len(list1)):
-#         if list1[i][0].isalpha():
-#             list1[i][0].upper()
-#             print(list1[i])
-    
-#     return list1
+for i in range(3):
+        for j in range(3):
+            for z in range(1,3):
+                print(i,j,z,arr[i:i+z,j:j+z])
 
-
-# s = input()
-
-# result = solve(s)
-# print(result)
-
-txt = "Welcome to my 2nd world"
-
-x = txt.title()
-
-print(x)
+print(matrix[0:1][0:2])
+print(matrix[0:1][0:1])
