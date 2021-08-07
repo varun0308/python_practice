@@ -6,25 +6,20 @@ import cv2
 # arr[h,w]
 h = 500
 w = 1000
-"""
-^
-|
-|
-|
-h
 
-w ------->
-"""
-arr = np.ones((h, w), dtype='uint8') * 255
+arr = np.ones((h, w, 3), dtype='uint8') * 255
+print(arr.shape)
+arr[:150,:150, 0] = 150
+arr[350:,:150, 1] = 100
+arr[:150,850:, 1] = 50
+arr[350:,850:, 0] = 0
+arr[150:350,200:800, :2] = 175
 
-arr[:150,:150] = arr[350:,:150] = arr[:150,850:] = arr[350:,850:] = 0
-arr[150:350,200:800] = 0
-
-image = Image.fromarray(arr, 'L')
-image.save('template.png')
+image = Image.fromarray(arr)
+image.save('test_c_01.png')
 
 
-# If we use cv2 we do this : 
+# If we use cv2 we do this (replacing last line) : 
 # cv2.imwrite(file_name, img) 
 # cv2.waitKey(0) 
 # cv2.destroyAllWindows()

@@ -1,6 +1,7 @@
 """
 Only black and white images possible
 Any size
+
 """
 
 import numpy as np
@@ -19,7 +20,7 @@ print("Give number of test cases(<10000) and number of random pixel sampling.")
 n, iterations = [int(x) for x in input().split(' ')]
 
 print("---- Ok wait ----")
-# Gets the black pixel ratio for the 100 test cases 
+# Gets the black pixel ratio for the n test cases 
 iteration_list = []
 
 # Makes sure no repeatation of pixel co=ordinates(in the inner samples)
@@ -29,7 +30,7 @@ check_list = []
 count_white = 0
 count_black = 0
 
-# 100 test cases
+# n test cases
 for _ in range(n) :
     
     # Getting "iteration" number of pixels
