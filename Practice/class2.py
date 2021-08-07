@@ -1,22 +1,25 @@
 class vehicle:
 
-    def __init__(self,wheel,vehicle_,size):
+    def __init__(self,wheel,company,seats):
         self.w = wheel
-        self.v= vehicle_
-        self.s = size
+        self.c = company
+        self.s =seats
 
     def wheels(self):
         print("No. of wheels =",self.w) 
 
-    def sizes(self):
-        print("Size of the",self.v ,"is",self.s)
+    def company(self):
+        print("Vehicle is of",self.c,"company")
+    
+    def seats(self):
+        print("Vehicle has",self.s,"seats")
 
-a=input()
-b=input()
-c=input()
+for i in range (3) :
+    print("Give no. of wheels,company and no. of seats")
+    a,b,c = [x for x in input().split()]
 
-obj = vehicle(a,b,c)
-
-obj.wheels()
-obj.sizes()
+    vehicle1 = vehicle(a,b,c)
+    vehicle1.wheels()
+    vehicle1.company()
+    vehicle1.seats()
 

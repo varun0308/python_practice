@@ -11,10 +11,10 @@ def calculate_lcm(m,n):
     return(lcm)
     
 
-def factor_multipication(a,b,c,d,lcm_):
+def factor_multipication(a,b,c,d,lcm):
     # finding the factor for numerator multiplication
-    p = (lcm_)//c
-    q = (lcm_)//d 
+    p = (lcm)//c
+    q = (lcm)//d 
 
     # Changing the numerator
     a = a*p
@@ -22,7 +22,7 @@ def factor_multipication(a,b,c,d,lcm_):
 
     # New nemerator and denominator 
     sum_of_num = a+b
-    sum_of_den = lcm_
+    sum_of_den = lcm
 
     # Removing the old values of index [0]
     numarators.remove(a/p)

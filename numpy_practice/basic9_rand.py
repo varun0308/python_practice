@@ -16,6 +16,6 @@ print(x)
 x = random.choice([3, 5, 7, 9], size=(3, 5))
 print(x)
 
-# Makes a np array of size (3,5) with numbers from 0 to 19
-x = random.choice(20, size=(3, 5))
+# Makes a np array of size (3,5) with numbers from [1,19]
+x = random.randint(1,20, size=(3, 5, 3))
 print(x)
