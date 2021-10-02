@@ -1,0 +1,21 @@
+Actual total black pixel(brute force) : 250502
+Actual ratio of black pixels(brute force) : 34.457
+
+
+Number of black pixels for 100 iterations : 218100
+Ratio of black pixels for 100 ierations : 30.0
+
+
+Number of black pixels for 1000 iterations : 261720
+Ratio of black pixels for 1000 ierations : 36.0
+
+
+Number of black pixels for 10000 iterations : 247034
+Ratio of black pixels for 10000 ierations : 33.98
+
+
+Number of black pixels for 1000000 iterations : 250691
+Ratio of black pixels for 1000000 ierations : 34.483
+
+
+

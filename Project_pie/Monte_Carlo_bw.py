@@ -8,52 +8,58 @@ import numpy as np
 import cv2
 import random
 
+def black_ratio(black_pixel,white_pixel):
+    ratio_black = float("{:.5f}".format(black_pixel/(black_pixel+white_pixel)))
+    return ratio_black*100
 
-img = cv2.imread(r'C:\Users\varun\Coding\python_practice\Project_pie\star.png',0)
-# Image is as a numpy array
+def pixel_count(img,h,w):
+    black_pixel = white_pixel = 0
+    for i in range(h):
+        for j in range(w):
+            if img[i,j] == 0:
+                black_pixel += 1
+            else :
+                white_pixel += 1
+    return black_pixel,white_pixel
+
+
+img = cv2.imread(r'C:\Users\varun\Coding\python_practice\Project_pie\test_c_01_tt.png',0)
+# Image as a numpy array
 
 # Getting shape of image
 h, w = img.shape
 
-print("Max number of random pixel sampling =",h*w)
-print("Give number of test cases(<10000) and number of random pixel sampling.")
-n, iterations = [int(x) for x in input().split(' ')]
-
-print("---- Ok wait ----")
-# Gets the black pixel ratio for the n test cases 
-iteration_list = []
-
-# Makes sure no repeatation of pixel co=ordinates(in the inner samples)
-check_list = []
+iterations = [100,1000,10000,1000000]
 
 # Count of black and white pixel in the random sampling
-count_white = 0
-count_black = 0
+count_white = [0]*4
+count_black = [0]*4
 
-# n test cases
-for _ in range(n) :
-    
-    # Getting "iteration" number of pixels
-    for i in range(iterations):
+bl_px,wh_px = pixel_count(img,h,w)
+
+print("Actual total black pixel(brute force) :",bl_px)
+print("Actual ratio of black pixels(brute force) :",black_ratio(bl_px,wh_px))
+
+# Getting "iteration" number of pixels
+for i in range(4):
+    for j in range(iterations[i]):
         # Random pixel values
         x = random.randint(0,h-1)
         y = random.randint(0,w-1)
 
+        check_list = []
         # Ensuring no repeatation of pixels
         if [x,y] not in check_list : 
             if img[x,y] == 0 :
-                count_black += 1
+                count_black[i] += 1
             else :
-                count_white += 1
+                count_white[i] += 1
 
         else :
-            i -= 1
+            j -= 1
 
     # Appending black pixel to total value to the list
-    ratio_black = float("{:.5f}".format(count_black/(count_black+count_white)))
-    iteration_list.append(ratio_black)
+    print('\n')
+    print(f"Number of black pixels for {iterations[i]} iterations :",int(black_ratio(count_black[i],count_white[i])*h*w)//100)
+    print(f"Ratio of black pixels for {iterations[i]} ierations :",round(black_ratio(count_black[i],count_white[i]),3))
     
-# Final calculations
-mean_ratio_black = sum(iteration_list)/n
-print("Percentage of black : %0.5f"%(mean_ratio_black*100))
-print("Total black pixel : %d/%d"%(mean_ratio_black*(h*w),(h*w)))
